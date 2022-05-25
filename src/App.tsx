@@ -26,8 +26,8 @@ function App() {
 
     return (
         <>
-            <Tasks tasks={tasks} completeTask={completeTask} />
             <AddTask addTask={addTask} />
+            <Tasks tasks={tasks} completeTask={completeTask} />
         </>
     )
 }

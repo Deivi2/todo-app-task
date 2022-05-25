@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useCallback, useState } from 'react'
 
 interface IProps {
     addTask: (title: string) => void
@@ -7,7 +7,9 @@ interface IProps {
 const AddTask: FC<IProps> = props => {
     const [input, setInput] = useState<string>()
 
-    const handleAddTaskClick = () => !!input.trim() && props.addTask(input)
+    const handleAddTaskClick = useCallback(() => {
+        !!input.trim() && props.addTask(input)
+    }, [input, props])
 
     return (
         <div>
